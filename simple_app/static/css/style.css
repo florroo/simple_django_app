@@ -39,3 +39,19 @@ a {
     text-decoration: none;
     color: purple;
 }
+
+section {
+    background-color: #644363;
+    padding: 20px 10px 10px 10px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.document {
+    margin-bottom: 10px;
+}
+
+.end_par {
+    margin-top: 10px;
+}

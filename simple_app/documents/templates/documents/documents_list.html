@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block content %}
+    <h1>your documents</h1>
     <section>
-        <h1>your documents</h1>
         {% for document in documents %}
             <article class="document">
-                <h2>{{ document.title }}</h2>
+                <h3>{{ document.title }}</h3>
                 <p>{{ document.category }}</p>
                 <p>{{ document.date}}</p>
             </article>
         {% endfor %}
-        <p>you can go back by clicking this <a href="/">link</a></p>
     </section>
+    <p class="end_par">you can go back by clicking this <a href="/">link</a></p>
 {% endblock %}
