@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Djagno documents app
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="/" alt="home">🏠</a>
+        <a href="/about" alt="about">❓</a>
+        <a href="/documents" alt="documents">📝</a>
+    </nav>
+
+    <main>
+        {% block content %}
+            Here is the content
+        {% endblock %}
+    </main>
+</body>
+</html>

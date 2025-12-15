@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana;
+}
+
+body {
+    background-color: black;
+    font-size: 15px;
+    color: white;
+}
+
+nav {
+    background-color: purple;
+    padding: 10px;
+    height: 60px;
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+main {
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: purple;
+}
