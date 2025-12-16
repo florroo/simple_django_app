@@ -55,3 +55,61 @@ section {
 .end_par {
     margin-top: 10px;
 }
+
+.form {
+    text-align: left;
+    background-color: #644363;
+    padding: 20px 10px 10px 10px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1rem;
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form input {
+    padding: 5px;
+    max-width: 300px;
+}
+
+.helptext {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.helptext ul {
+    list-style-type: none;
+}
+
+.errorlist {
+    color: #F00;
+    margin-left: 2rem;
+}
+
+.errorlist li::marker {
+    content: '🚨 ';
+}
+
+.submit {
+    width: 100px;
+    background: purple;
+    border: none;
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+.logout {
+    background: red;
+    border: none;
+    padding: 5px 15px;
+    font-weight: bold;
+}
