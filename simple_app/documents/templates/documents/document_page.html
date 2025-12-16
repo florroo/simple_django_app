@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ document.title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ document.title }}</h1>
+    <section>
+        <img src="{{ document.banner.url }}" alt="{{ document.title }}"/>
+        <p>{{ document.category }}</p>
+        <p>{{ document.description }}</p>
+        <p>{{ document.date}}</p>
+
+    </section>
+{% endblock %}

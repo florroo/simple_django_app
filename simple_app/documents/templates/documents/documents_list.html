@@ -9,8 +9,13 @@
     <section>
         {% for document in documents %}
             <article class="document">
-                <h3>{{ document.title }}</h3>
+                <h3>
+                    <a href="{% url 'documents:page' slug=document.slug %}">
+                        {{ document.title }}
+                    </a>
+                </h3>
                 <p>{{ document.category }}</p>
+                <p>{{ document.description }}</p>
                 <p>{{ document.date}}</p>
             </article>
         {% endfor %}
