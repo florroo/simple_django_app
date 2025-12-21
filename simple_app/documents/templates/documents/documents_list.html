@@ -1,12 +1,12 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    documents
+    Doctus - your documents
 {% endblock %}
 
 {% block content %}
     <h1>your documents</h1>
-    <section>
+    <section class="documents_list">
         {% for document in documents %}
             <article class="document">
                 <h3>
@@ -14,7 +14,6 @@
                         {{ document.title }}
                     </a>
                 </h3>
-                <p>{{ document.category }}</p>
                 <p>{{ document.description }}</p>
                 <p>{{ document.date}}</p>
             </article>

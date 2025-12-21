@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title %}
-            Djagno documents app
+            Doctus
         {% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -15,24 +15,31 @@
 </head>
 <body>
     <nav>
-        <a href="/" aria-label="home" title="Home">🏠</a>
-        <a href="/about" aria-label="about" title="about">❓</a>
-        
-        {% if user.is_authenticated %}
 
-        <a href="{% url 'documents:list' %}" aria-label="documents" title="documents">📝</a>
-        <a href="{% url 'documents:new-document' %}" aria-label="new-documents" title="new-document">➕</a>
-        <form action="{% url 'users:logout' %}" method="POST">
-            {% csrf_token %}
-            <button class="logout" title="logout">logout</button>
-        </form>
+        <div class="name">
+            Doctus
+        </div>
 
-        {% else %}
+        <div class="links">
+            <a href="/" aria-label="home" title="Home">Homepage</a> | 
+            <a href="/about" aria-label="about" title="about">About</a> | 
+            
+            {% if user.is_authenticated %}
 
-        <a href="{% url 'users:login' %}" aria-label="login" title="login">👉</a>
-        <a href="{% url 'users:register' %}" aria-label="register" title="register">🕵️‍♀️</a>
+            <a href="{% url 'documents:list' %}" aria-label="documents" title="documents">Your documents</a> |
+            <a href="{% url 'documents:new-document' %}" aria-label="new-documents" title="new-document">New document</a> |
+            <form action="{% url 'users:logout' %}" method="POST">
+                {% csrf_token %}
+                <button class="logout" title="logout">Logout</button>
+            </form>
 
-        {% endif %}
+            {% else %}
+
+            <a href="{% url 'users:login' %}" aria-label="login" title="login">Login</a> |
+            <a href="{% url 'users:register' %}" aria-label="register" title="register">Register</a>
+
+            {% endif %}
+        </div>
 
     </nav>
 

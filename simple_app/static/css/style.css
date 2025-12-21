@@ -14,15 +14,35 @@ body {
 nav {
     background-color: purple;
     padding: 10px;
-    height: 60px;
-    font-size: 30px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 20px;
+    align-items: center;
+}
+
+nav .name {
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 20px;
 }
 
 nav a {
     text-decoration: none;
+}
+
+nav a:hover {
+    color: black;
+    transition: 0.5s;
+}
+
+nav a {
+    color: white;
+    font-size: 15px;
+}
+
+nav .links {
+    display: flex;
+    gap: 15px;
 }
 
 main {
@@ -41,15 +61,34 @@ a {
 }
 
 section {
-    background-color: #644363;
+    background-color: #311630;
     padding: 20px 10px 10px 10px;
     border-radius: 10px;
     max-width: 600px;
     margin: 0 auto;
 }
 
+.documents_list {
+    background-color: transparent;
+    padding: 20px 10px 10px 10px;
+    border-radius: 10px;
+    width: auto;
+    margin: 0 auto;
+}
+
+
 .document {
-    margin-bottom: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+    background-color: #311630;
+    border-radius: 15px;
+}
+
+.document:hover {
+    transition: 0.5s;
+    scale: calc(1.05);
+    border: 2px solid purple;
 }
 
 .end_par {
@@ -58,7 +97,7 @@ section {
 
 .form {
     text-align: left;
-    background-color: #644363;
+    background-color: #311630;
     padding: 20px 10px 10px 10px;
     border-radius: 10px;
     max-width: 700px;
@@ -108,8 +147,18 @@ section {
 }
 
 .logout {
-    background: red;
+    background: transparent;
     border: none;
-    padding: 5px 15px;
     font-weight: bold;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.logout:hover {
+    color: white;
+    transition: 0.5s;
+}
+
+.doc_url {
+    margin-top: 20px;
 }

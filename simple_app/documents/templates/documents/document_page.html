@@ -1,16 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    {{ document.title }}
+    Doctus - {{ document.title }}
 {% endblock %}
 
 {% block content %}
     <h1>{{ document.title }}</h1>
     <section>
-        <img src="{{ document.banner.url }}" alt="{{ document.title }}"/>
-        <p>{{ document.category }}</p>
         <p>{{ document.description }}</p>
         <p>{{ document.date}}</p>
-
+        <a href="{{ document.file.url }}" class="doc_url">pobierz plik</a>
     </section>
 {% endblock %}
