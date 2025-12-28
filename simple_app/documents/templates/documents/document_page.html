@@ -9,6 +9,19 @@
     <section>
         <p>{{ document.description }}</p>
         <p>{{ document.date}}</p>
-        <a href="{{ document.file.url }}" class="doc_url">pobierz plik</a>
+
+        {% if document.file %}
+        <a href="{{ document.file.url }}" class="doc_url">pobierz plik</a><br/>
+
+        {% else %}
+        <p class="doc_url">no file added</p>
+
+        {% endif %}
+
+        <div class="buttons">
+            <a href="{% url 'documents:list' %}" class="cancel_button">Go back</a>
+            <a class="edit_document" href="{% url 'documents:edit-document' slug=document.slug %}">Edit</a>
+            <a class="delete_document" href="{% url 'documents:delete-document' slug=document.slug %}">Delete</a>
+        </div>
     </section>
 {% endblock %}

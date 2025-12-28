@@ -24,6 +24,15 @@ nav .name {
     font-weight: bold;
     font-size: 30px;
     margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo_icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
 }
 
 nav a {
@@ -95,6 +104,8 @@ section {
     margin-top: 10px;
 }
 
+
+
 .form {
     text-align: left;
     background-color: #311630;
@@ -138,12 +149,13 @@ section {
 }
 
 .submit {
-    width: 100px;
+    width: 110px;
     background: purple;
     border: none;
     margin-top: 20px;
     padding: 10px 15px;
     font-weight: bold;
+    border-radius: 10px;
 }
 
 .logout {
@@ -162,3 +174,64 @@ section {
 .doc_url {
     margin-top: 20px;
 }
+
+.edit_buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center; 
+    gap: 20px;
+}
+
+.delete_buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center; 
+    gap: 20px;
+}
+
+.buttons { 
+    margin-top: 25px;
+    display: flex;
+    justify-content: end; 
+    gap: 20px;
+}
+
+.edit_document, .delete_document, .cancel_button {
+    padding: 10px 15px;
+    width: 110px;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    color: black;
+    font-size: 12px;
+    text-align: center;
+}
+
+.cancel_button {
+    background-color: chartreuse;
+}
+
+.edit_document {
+    background-color: purple;
+}
+
+.delete_document {
+    background-color: red;
+}
+
+.edit_document:hover, .delete_document:hover, .cancel_button:hover, .submit:hover {
+    color: white;
+    transition: 0.5s;
+}
+
+.cancel_button:hover {
+    background-color: #358d7a;
+}
+
+.edit_document:hover, .submit:hover {
+    background-color: rgb(136, 71, 118);
+}     
+.delete_document:hover {
+    background-color: rgb(105, 11, 11);
+}
+

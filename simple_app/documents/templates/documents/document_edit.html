@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Doctus - edit document
+{% endblock %}
+
+{% block content %}
+    <h1> edit document - {{ document.title }}</h1>
+    <form class="form" method="post" action="{% url 'documents:edit-document' slug=document.slug %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if document.file %}
+        <p>Current file: <a href="{{ document.file.url }}">Download</a></p>
+        {% endif %}
+
+        <div class="edit_buttons">
+            <button class="submit">Save</button>
+            <a href="{% url 'documents:page' slug=document.slug %}" class="cancel_button">Cancel</a>
+        </div>
+    </form>
+{% endblock %}

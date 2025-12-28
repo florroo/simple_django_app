@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Doctus - delete document
+{% endblock %}
+
+{% block content %}
+    <h1>Are you sure?</h1>
+
+    <p>Do you really want to delete <strong>{{ document.title }}</strong>? </p>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="delete_buttons">
+            <button class="delete_document">Yes, delete</button>
+            <a href="{% url 'documents:page' slug=document.slug %}" class="cancel_button">Cancel</a>
+        </div>
+    </form>
+{% endblock %}
