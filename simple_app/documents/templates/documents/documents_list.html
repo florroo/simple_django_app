@@ -7,17 +7,21 @@
 {% block content %}
     <h1>your documents</h1>
     <section class="documents_list">
-        {% for document in documents %}
-            <article class="document">
-                <h3>
-                    <a href="{% url 'documents:page' slug=document.slug %}">
-                        {{ document.title }}
-                    </a>
-                </h3>
-                <p>{{ document.description }}</p>
-                <p>{{ document.date}}</p>
-            </article>
-        {% endfor %}
+        {% if documents %}
+            {% for document in documents %}
+                <article class="document">
+                    <h3>
+                        <a href="{% url 'documents:page' slug=document.slug %}">
+                            {{ document.title }}
+                        </a>
+                    </h3>
+                    <p>{{ document.description }}</p>
+                    <p>{{ document.date}}</p>
+                </article>
+            {% endfor %}
+        {% else %}
+            <h2>Your documents list is empty, add some clicking link on your left side</h2>
+        {% endif %}
     </section>
     <p class="end_par">you can go back by clicking this <a href="/">link</a></p>
 {% endblock %}

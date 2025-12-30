@@ -11,24 +11,26 @@
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
     <nav>
-
         <a class="name" href="/">
             <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo_icon">
             <span>Doctus</span>
         </a>
 
         <div class="links">
-            <a href="/" aria-label="home" title="Home">Homepage</a> | 
-            <a href="/about" aria-label="about" title="about">About</a> | 
+            <a href="/" aria-label="home" title="Home">Homepage</a> <hr />
+            <a href="/about" aria-label="about" title="about">About</a>  <hr />
             
             {% if user.is_authenticated %}
 
-            <a href="{% url 'documents:list' %}" aria-label="documents" title="documents">Your documents</a> |
-            <a href="{% url 'documents:new-document' %}" aria-label="new-documents" title="new-document">New document</a> |
+            <a href="{% url 'documents:list' %}" aria-label="documents" title="documents">Your documents</a>  <hr />
+            <a href="{% url 'documents:new-document' %}" aria-label="new-documents" title="new-document">New document</a>  <hr />
             <form action="{% url 'users:logout' %}" method="POST">
                 {% csrf_token %}
                 <button class="logout" title="logout">Logout</button>
@@ -36,7 +38,7 @@
 
             {% else %}
 
-            <a href="{% url 'users:login' %}" aria-label="login" title="login">Login</a> |
+            <a href="{% url 'users:login' %}" aria-label="login" title="login">Login</a>  <hr />
             <a href="{% url 'users:register' %}" aria-label="register" title="register">Register</a>
 
             {% endif %}

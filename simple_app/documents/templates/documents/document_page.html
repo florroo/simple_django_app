@@ -6,12 +6,12 @@
 
 {% block content %}
     <h1>{{ document.title }}</h1>
-    <section>
+    <section class="document_lines">
         <p>{{ document.description }}</p>
         <p>{{ document.date}}</p>
 
         {% if document.file %}
-        <a href="{{ document.file.url }}" class="doc_url">pobierz plik</a><br/>
+        <a href="{{ document.file.url }}" class="doc_url" target="_blank">pobierz plik</a><br/>
 
         {% else %}
         <p class="doc_url">no file added</p>
