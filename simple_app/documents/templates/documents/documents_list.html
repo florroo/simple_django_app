@@ -10,13 +10,13 @@
         {% if documents %}
             {% for document in documents %}
                 <article class="document">
-                    <h3>
-                        <a href="{% url 'documents:page' slug=document.slug %}">
+                    <a href="{% url 'documents:page' slug=document.slug %}" class="document_link">
+                        <h3>
                             {{ document.title }}
-                        </a>
-                    </h3>
-                    <p>{{ document.description }}</p>
-                    <p>{{ document.date}}</p>
+                        </h3>
+                        <p>{{ document.description }}</p>
+                        <p>{{ document.date}}</p>
+                    </a>
                 </article>
             {% endfor %}
         {% else %}
