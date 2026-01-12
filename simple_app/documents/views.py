@@ -5,12 +5,26 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.utils.text import slugify
 from .forms import DocumentForm
+from django.core.paginator import Paginator
+from django.db.models import Q
 
 # Create your views here.
 @login_required(login_url='/users/login/')
 def documents_list(request):
+    query = request.GET.get('q', '')
     documents = Document.objects.filter(owner=request.user).order_by('-date') # - in descending order
-    return render(request, 'documents/documents_list.html', { 'documents': documents })
+
+    if query:
+        documents = documents.filter(
+            Q(title__icontains=query) | 
+            Q(description__icontains=query)
+        )
+
+    paginator = Paginator(documents, 3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'documents/documents_list.html', { 'documents': page_obj, 'query': query })
 
 
 @login_required(login_url='/users/login/')

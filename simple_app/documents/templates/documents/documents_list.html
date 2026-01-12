@@ -6,7 +6,15 @@
 
 {% block content %}
     <h1>your documents</h1>
+
     <section class="documents_list">
+        <div class="search_div">
+            <form action="" method="get" class="search_form">
+                <input type="text" placeholder="input title or description" value="{{ query }}" name="q" class="search_input">
+                <button type="submit" class="submit_button"> Search </button>
+            </form>
+        </div>
+
         {% if documents %}
             {% for document in documents %}
                 <article class="document">
@@ -19,9 +27,28 @@
                     </a>
                 </article>
             {% endfor %}
-        {% else %}
+
+        {% elif not documents and query %}
+            <h2>no results for <span class="info_query">{{ query }}</span></h2>
+        {% elif not documents %}
             <h2>Your documents list is empty, add some clicking link on your left side</h2>
         {% endif %}
+
+        <div class="pagination">
+            {% if documents.has_previous %}
+                <a href="?q={{ query }}&page={{ documents.previous_page_number }}" class="arrows">&larr;</a>
+            {% endif %}
+
+            <span>
+                Strona <b>{{ documents.number }}</b> z <b>{{ documents.paginator.num_pages }}</b>
+            </span>
+
+            {% if documents.has_next %}
+                <a href="?q={{ query }}&page={{ documents.next_page_number }}" class="arrows">&rarr;</a>
+            {% endif %}
+        </div>
+
     </section>
+
     <p class="end_par">you can go back by clicking this <a href="/">link</a></p>
 {% endblock %}
