@@ -141,8 +141,8 @@ body.light .document {
 }
 
 .document:hover {
-    transition: 0.5s;
-    scale: calc(1.05);
+    transition: 0.2s;
+    scale: calc(1.01);
     border: 2px solid rgb(255, 255, 255);
 }
 
